@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="template">
+        <name>blank_j3</name>
+        <creationDate>2012-10-03</creationDate>
+        <author>Saity74 Template Generator</author>
+        <authorEmail>info@saity74.ru</authorEmail>
+        <authorUrl>http://saity74.ru</authorUrl>
+        <copyright>Saity74 LLC.</copyright>
+        <license>GNU/GPL 2 or Later</license>
+        <version>1.0.0</version>
+        <description>TMPL_JOOMLA3_DESC</description>
+        <files>
+                <filename>index.php</filename>
+                <filename>index.html</filename>
+                <filename>templateDetails.xml</filename>
+                <folder>img</folder>
+                <folder>css</folder>
+                <folder>html</folder>
+                <folder>js</folder>
+        </files>
+        <positions>
+		<position>top</position>
+		<position>top-left</position>
+		<position>top-center</position>
+		<position>top-right</position>
+		<position>menu-top</position>
+		<position>slider</position>
+		<position>menu-bottom</position>
+		<position>breadcrumbs</position>
+		<position>content-header</position>
+		<position>left</position>
+		<position>right</position>
+		<position>content-footer</position>
+		<position>bottom1</position>
+		<position>bottom2</position>
+		<position>bottom3</position>
+		<position>footer</position>
+        </positions>
+        <languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.tpl_blank_j3.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.tpl_blank_j3.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_blank_j3.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_blank_j3.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="socialButtons"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_BLANK_J3_SOCIAL_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_LABEL"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field name="twitter" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_TWITTER_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_TWITTER_DESC" />
+				
+				<field name="skype" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_SKYPE_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_SKYPE_DESC" />
+				
+				<field name="vk" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_VK_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_VK_DESC" />
+				
+				<field name="facebook" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_FACEBOOK_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_FACEBOOK_DESC" />
+				
+				<field name="youtube" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_YOUTUBE_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_YOUTUBE_DESC" />
+				
+				<field name="icq" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_ICQ_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_ICQ_DESC" />
+
+				<field name="logoFile" class="" type="media" default=""
+					label="TPL_BLANK_J3_LOGO_LABEL"
+					description="TPL_BLANK_J3_LOGO_DESC" />
+					
+				<field name="googleFont"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_BLANK_J3_FONT_LABEL"
+					description="TPL_BLANK_J3_FONT_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="googleFontName" class="" type="text" default="Open+Sans"
+					label="TPL_BLANK_J3_FONT_NAME_LABEL"
+					description="TPL_BLANK_J3_FONT_NAME_DESC" />
+				
+				<field name="wrap-edges"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_BLANK_J3_EDGES_LABEL"
+					description="TPL_BLANK_J3_EDGES_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field name="top-left-size"
+					class=""
+					type="text"
+					label="TPL_BLANK_J3_TOPLEFT_SIZE_LABEL"
+					description="TPL_BLANK_J3_TOPLEFT_SIZE_DESC" />
+				<field name="top-center-size"
+					class=""
+					type="text"
+					label="TPL_BLANK_J3_TOPCENTER_SIZE_LABEL"
+					description="TPL_BLANK_J3_TOPCENTER_SIZE_DESC" />
+				<field name="top-right-size"
+					class=""
+					type="text"
+					label="TPL_BLANK_J3_TOPRIGHT_SIZE_LABEL"
+					description="TPL_BLANK_J3_TOPRIGHT_SIZE_DESC" />
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
