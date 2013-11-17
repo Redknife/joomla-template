@@ -167,8 +167,20 @@ $params = $this->params;
 						<jdoc:include type="modules" name="bottom3" style="default"/>
 					</div>
 				</div>
+				<?php elseif($this->countModules('bottom1')) :?>
+					<div class="span12 drop" id="bottom1">
+						<jdoc:include type="modules" name="bottom1" style="default"/>
+					</div>
+				<?php elseif($this->countModules('bottom2')) :?>
+					<div class="span12 drop" id="bottom2">
+						<jdoc:include type="modules" name="bottom2" style="default"/>
+					</div>
+				<?php elseif($this->countModules('bottom3')) :?>
+					<div class="span12 drop" id="bottom3">
+						<jdoc:include type="modules" name="bottom3" style="default"/>
+					</div>
 				<?php endif; ?>
-				
+
 				<?php if ($this->countModules('footer')) : ?>
 				<div class="row">
 					<div class="span12 drop" id="footer">
