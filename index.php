@@ -188,34 +188,6 @@ $params = $this->params;
 					</div>
 				</div>
 				<?php endif; ?>
-
-				<!--new! -->
-				<?php if ($params->get('socialButtons')) : ?>
-					<div class="row">
-						<div class="span12 social-buttons">
-							<?php $p = $params->get('twitter'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('twitter'); ?>" class="social-btn" id="twitter">twitter</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('facebook'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('facebook'); ?>" class="social-btn" id="facebook">facebook</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('vk'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('vk'); ?>" class="social-btn" id="vk">vk</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('youtube'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('youtube'); ?>" class="social-btn" id="youtube">youtube</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('skype'); if (!empty($p)) : ?>
-								<a href="skype:<?php echo $params->get('skype'); ?>" class="social-btn" id="skype"><?php echo $params->get('skype'); ?></a>
-							<?php endif; ?>
-						</div>
-					</div>
-				<?php endif; ?>
-				
 			</div>
 		</div>
 	</body>

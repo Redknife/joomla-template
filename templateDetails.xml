@@ -7,7 +7,7 @@
         <authorUrl>http://saity74.ru</authorUrl>
         <copyright>Saity74 LLC.</copyright>
         <license>GNU/GPL 2 or Later</license>
-        <version>2.1.0</version>
+        <version>1.0.0</version>
         <description>TMPL_JOOMLA3_DESC</description>
         <files>
                 <filename>index.php</filename>
@@ -75,6 +75,10 @@
 				<field name="youtube" class="" type="text"
 					label="TPL_BLANK_J3_SOCIAL_YOUTUBE_LABEL"
 					description="TPL_BLANK_J3_SOCIAL_YOUTUBE_DESC" />
+				
+				<field name="icq" class="" type="text"
+					label="TPL_BLANK_J3_SOCIAL_ICQ_LABEL"
+					description="TPL_BLANK_J3_SOCIAL_ICQ_DESC" />
 
 				<field name="logoFile" class="" type="media" default=""
 					label="TPL_BLANK_J3_LOGO_LABEL"
