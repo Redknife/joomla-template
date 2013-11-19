@@ -24,3 +24,26 @@ body{
 .slider{
 	overflow: hidden;
 }
+
+.breadcrumbs{
+  margin: 10px 0px;
+}
+
+.navbar .nav {
+  margin: 10px 10px 10px 0px;
+}
+
+.social-buttons{
+  padding: 20px 0px;
+}
+.social-buttons .social-btn{
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 1em;
+  font-family: inherit;
+}
+.social-buttons .social-btn:hover{
+  text-decoration: underline;
+  color: #000;
+}
