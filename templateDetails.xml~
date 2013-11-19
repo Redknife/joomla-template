@@ -7,7 +7,7 @@
         <authorUrl>http://saity74.ru</authorUrl>
         <copyright>Saity74 LLC.</copyright>
         <license>GNU/GPL 2 or Later</license>
-        <version>1.0.0</version>
+        <version>2.1.0</version>
         <description>TMPL_JOOMLA3_DESC</description>
         <files>
                 <filename>index.php</filename>

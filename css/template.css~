@@ -2,6 +2,7 @@ body{
     font: "Trebuchet MS" 14px/18px;
     background: #fff;
 }
+
 .wrapper{
   background: #fff;
   width: 960px;
@@ -10,22 +11,28 @@ body{
 .wrap-border{
   box-shadow: 0 0 10px #333; 
 }
+
 #slider-container > li{
 	float: left;
 	list-style: none;
 }
+
 #slider-container > li > img{
 	margin: 0 auto;
 }
+
 .slider{
 	overflow: hidden;
 }
+
 .breadcrumbs{
   margin: 10px 0px;
 }
+
 .navbar .nav {
   margin: 10px 10px 10px 0px;
 }
+
 .social-buttons{
   padding: 20px 0px;
 }

@@ -189,6 +189,7 @@ $params = $this->params;
 				</div>
 				<?php endif; ?>
 
+				<!--new! -->
 				<?php if ($params->get('socialButtons')) : ?>
 					<div class="row">
 						<div class="span12 social-buttons">
