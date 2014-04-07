@@ -8,16 +8,16 @@
  */
 
 defined('_JEXEC') or die;
+
 JHtml::_('bootstrap.tooltip');
 
-$separator = '<i class="icon icon-chevron-right"> </i> '
 ?>
 
 <ul class="breadcrumb<?php echo $moduleclass_sfx; ?>">
 	<?php
 	if ($params->get('showHere', 1))
 	{
-		echo '<li class="active"><i class="divider icon icon-home hasTooltip" title="' . JText::_('MOD_BREADCRUMBS_HERE') . '"></i></li>';
+		echo '<li class="active"><span class="divider icon-location hasTooltip" title="' . JText::_('MOD_BREADCRUMBS_HERE') . '"></span></li>';
 	}
 
 	// Get rid of duplicated entries on trail including home page when using multilanguage
@@ -35,10 +35,11 @@ $separator = '<i class="icon icon-chevron-right"> </i> '
 	prev($list);
 	$penult_item_key = key($list);
 
-	// Generate the trail
-	foreach ($list as $key => $item) :
 	// Make a link if not the last item in the breadcrumbs
 	$show_last = $params->get('showLast', 1);
+
+	// Generate the trail
+	foreach ($list as $key => $item) :
 	if ($key != $last_item_key)
 	{
 		// Render all but last item - along with separator
