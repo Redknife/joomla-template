@@ -10,5 +10,7 @@ $params  = $displayData->params;
 	<?php if ($images->image_intro_caption):
 		echo 'class="caption"' . ' title="' . htmlspecialchars($images->image_intro_caption) . '"';
 	endif; ?>
-	src="<?php echo htmlspecialchars($images->image_intro); ?>" alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>" itemprop="thumbnailUrl"/> </div>
+	src="<?php echo htmlspecialchars($images->image_intro); ?>" alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>" itemprop="thumbnailUrl"/>
+	<?php echo $images->image_intro_caption ? '<span class="into-image-caption">'.$images->image_intro_caption.'</span>' : '' ?>
+	</div>
 <?php endif; ?>

@@ -1,22 +1,28 @@
-<?php defined('_JEXEC') or die; 
-
-JHtml::_('bootstrap.framework');
+<?php defined('_JEXEC') or die;
+require_once(JPATH_THEMES.'/blank_j3/_php/blank_j3.php');
 JHtmlBootstrap::loadCss(false);
 
 $doc = JFactory::getDocument();
-$doc->addStyleSheet('templates/blank_j3/css/jcss.php');
+$doc->addStyleSheet('templates/blank_j3/css/reset.min.css');
+$doc->addStyleSheet('templates/blank_j3/css/bootstrap.min.css');
+$doc->addStyleSheet('templates/blank_j3/css/typo.css');
+$doc->addStyleSheet('templates/blank_j3/css/modules.css');
+$doc->addStyleSheet('templates/blank_j3/css/template.css');
 $doc->addScript('templates/blank_j3/js/application.js');
-$doc->addScript('templates/blank_j3/js/jquery.validate.min.js');
-$doc->addScript('templates/blank_j3/js/messages_ru.js');
-// $doc->addScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
-// $doc->addScript('templates/blank_j3/js/jquery.magnific-popup.min.js');
-// $doc->addScript('templates/blank_j3/js/jquery.placeholder.js');
+
+$blankj3_helper = new blank_j3($this);
+
 $params = $this->params;
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html dir="<?php echo $this->direction; ?>" lang="<?php echo $this->language; ?>" >
 	<head>
-		<jdoc:include type="head" />
+		<!-- Use of Google Font -->
+		<?php if ($params->get('googleFontName', '')): ?>
+			<link href='//fonts.googleapis.com/css?family=<?php echo $params->get('googleFontName'); ?>' rel='stylesheet' type='text/css' />
+		<?php endif; ?>
+
+			<jdoc:include type="headj3" />
 		<!--[if IE]>
 			<script type="text/javascript" src="templates/blank_j3/js/PIE.js"></script>
 		<![endif]-->
@@ -29,209 +35,214 @@ $params = $this->params;
 		<!--[if lt IE 9]>
 			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 		<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
 	<body>
-	<?php if ($params->get('wrap-edges')) : ?>	
-		<div class="wrapper wrap-border">
-	<?php else : ?>
-		<div class="wrapper">
-	<?php endif ?>	
+		<?php if($blankj3_helper->show_top || $blankj3_helper->show_top_left || $blankj3_helper->show_center || $blankj3_helper->show_right): ?>
+		<header>
+			<?php if($blankj3_helper->show_top): ?>
+			<section id="top">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="top-modules-wrapper">
+								<jdoc:include type="modules" name="top" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<?php endif; ?>
+
+			<?php if($blankj3_helper->show_top_left || $blankj3_helper->show_top_center || $blankj3_helper->show_top_right): ?>
+			<section id="top-blocks">
+				<div class="container">
+					<div class="row">
+						<?php if($blankj3_helper->show_top_left): ?>
+							<div class="<?php echo $blankj3_helper->class_top_left; ?>">
+								<div id="top-left">
+									<jdoc:include type="modules" name="top-left" />
+								</div>
+							</div>
+						<?php endif; ?>
+
+						<?php if($blankj3_helper->show_top_center): ?>
+							<div class="<?php echo $blankj3_helper->class_top_center; ?>">
+								<div id="top-center">
+									<jdoc:include type="modules" name="top-center" />
+								</div>
+							</div>
+						<?php endif; ?>
+
+						<?php if($blankj3_helper->show_top_right): ?>
+							<div class="<?php echo $blankj3_helper->class_top_right; ?>">
+								<div id="top-right">
+									<jdoc:include type="modules" name="top-right" />
+								</div>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</section>
+			<?php endif; ?>
+		</header>
+		<?php endif; ?>
+
+		<?php if($blankj3_helper->show_user1): ?>
+		<section id="user1" class="<?php echo $blankj3_helper->class_user1; ?>">
 			<div class="container">
-				<?php if ($this->countModules('top')) : ?>
 				<div class="row">
-					<div class="span12" id="top">
-						<jdoc:include type="modules" name="top" style="none"/>
-					</div>
-				</div>
-				<?php endif; ?>
-				
-				<?php if ($this->countModules('top-left or top-center or top-right')) : ?>
-					<div class="row">
-				<?php endif; ?>
-				<?php if ($this->countModules('top-left')) : ?>
-					<div class="<?php echo $params->get('top-left-size', 'span3'); ?>" id="top-left">
-						<jdoc:include type="modules" name="top-left" style="none"/>
-					</div>
-				<?php endif; ?>
-				<?php if ($this->countModules('top-center')) : ?>
-					<div class="<?php echo $params->get('top-center-size', 'span5'); ?>" id="top-center">
-						<jdoc:include type="modules" name="top-center" style="none"/>
-					</div>
-				<?php endif; ?>
-				<?php if ($this->countModules('top-right')) : ?>
-					<div class="<?php echo $params->get('top-right-size', 'span4'); ?>" id="top-right">
-						<jdoc:include type="modules" name="top-right" style="none"/>
-					</div>
-				<?php endif; ?>
-				<?php if ($this->countModules('top-left or top-center or top-right')) : ?>
-					</div>
-				<?php endif; ?>
-				
-				<?php if ($this->countModules('menu-top')) : ?>
-				<div class="row">
-					<div class="span12">
-						<div class="navbar navbar-static-top">
-							<div id="navbar-inner">
-								<jdoc:include type="modules" name="menu-top" style="none"/>
-							</div>
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="user1-modules-wrapper">
+							<jdoc:include type="modules" name="user1" style="none"/>
 						</div>
 					</div>
 				</div>
-				<?php endif; ?>
-
-				<?php if ($this->countModules('slider')) : ?>
-				<div class="row">
-					<div class="span12" id="slider">
-						<jdoc:include type="modules" name="slider" style="none"/>
-					</div>
-				</div>
-				<?php endif ?>
-				
-				<?php if ($this->countModules('menu-bottom')) : ?>
-				<div class="row">
-					<div class="span12">
-						<div class="navbar navbar-static-top">
-							<div id="navbar-inner">
-								<jdoc:include type="modules" name="menu-bottom" style="none"/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<?php endif; ?>
-
-				<?php if ($this->countModules('breadcrumbs')) : ?>
-				<div class="breadcrumbs">
-					<div id="breadcrumbs-inner">
-						<jdoc:include type="modules" name="breadcrumbs" style="none"/>
-					</div>
-				</div>
-				<?php endif; ?>
-				
-				<!--  CONTENT -->
-				<div class="row">
-					<?php if ($this->countModules('left and right')) : ?>
-						<div class="span3" id="left">
-					<?php elseif ($this->countModules('left')) : ?>
-						<div class="span4" id="left">
-					<?php else : ?>
-						<div class="span0" id="left">
-					<?php endif; ?>						
-							<jdoc:include type="modules" name="left" style="default"/>
-						</div>
-					<?php if ($this->countModules('left and right')) : ?>
-						<div class="span6">
-					<?php elseif ($this->countModules('left or right')) : ?>
-						<div class="span8">
-					<?php else : ?>
-						<div class="span12">
-					<?php endif; ?>
-							<jdoc:include type="message" />
-							<?php if ($this->countModules('content-header')) : ?>
-								<div id="content-header">
-									<jdoc:include type="modules" name="content-header" style="default"/>
-								</div>
-							<?php endif; ?>
-							<jdoc:include type="component" />
-							<?php if ($this->countModules('content-footer')) : ?>
-								<div id="content-footer">
-									<jdoc:include type="modules" name="content-footer" style="default"/>
-								</div>
-							<?php endif; ?>
-						</div>
-					<?php if ($this->countModules('left and right')) : ?>
-						<div class="span3" id="right">
-					<?php elseif ($this->countModules('right')) : ?>
-						<div class="span4" id="right">
-					<?php else : ?>
-						<div class="span0" id="right">
-					<?php endif; ?>	
-							<jdoc:include type="modules" name="right" style="default"/>
-						</div>
-				</div>					
-				<!-- !CONTENT -->
-
-				<?php if ($this->countModules('bottom1 and bottom2 and bottom3')) : ?>
-				<div class="row bottom">
-					<div class="span4" id="bottom1">
-						<jdoc:include type="modules" name="bottom1" style="default"/>
-					</div>
-					<div class="span4" id="bottom2">
-						<jdoc:include type="modules" name="bottom2" style="default"/>
-					</div>
-					<div class="span4" id="bottom3">
-						<jdoc:include type="modules" name="bottom3" style="default"/>
-					</div>
-				<?php elseif($this->countModules('bottom1 and bottom2')) :?>
-					<div class="span4" id="bottom1">
-						<jdoc:include type="modules" name="bottom1" style="default"/>
-					</div>
-					<div class="span8" id="bottom2">
-						<jdoc:include type="modules" name="bottom2" style="default"/>
-					</div>
-				<?php elseif($this->countModules('bottom2 and bottom3')) :?>
-					<div class="span6" id="bottom2">
-						<jdoc:include type="modules" name="bottom2" style="default"/>
-					</div>
-					<div class="span6" id="bottom3">
-						<jdoc:include type="modules" name="bottom3" style="default"/>
-					</div>
-				<?php elseif($this->countModules('bottom1 and bottom3')) :?>
-					<div class="span8" id="bottom1">
-						<jdoc:include type="modules" name="bottom1" style="default"/>
-					</div>
-					<div class="span4" id="bottom3">
-						<jdoc:include type="modules" name="bottom3" style="default"/>
-					</div>
-				</div>
-				<?php elseif($this->countModules('bottom1')) :?>
-					<div class="span12" id="bottom1">
-						<jdoc:include type="modules" name="bottom1" style="default"/>
-					</div>
-				<?php elseif($this->countModules('bottom2')) :?>
-					<div class="span12" id="bottom2">
-						<jdoc:include type="modules" name="bottom2" style="default"/>
-					</div>
-				<?php elseif($this->countModules('bottom3')) :?>
-					<div class="span12" id="bottom3">
-						<jdoc:include type="modules" name="bottom3" style="default"/>
-					</div>
-				<?php endif; ?>
-
-				<?php if ($this->countModules('footer')) : ?>
-				<div class="row">
-					<div class="span12" id="footer">
-						<jdoc:include type="modules" name="footer" style="none"/>
-					</div>
-				</div>
-				<?php endif; ?>
-
-				<?php if ($params->get('socialButtons')) : ?>
-					<div class="row">
-						<div class="span12 social-buttons">
-							<?php $p = $params->get('twitter'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('twitter'); ?>" class="social-btn" id="twitter">twitter</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('facebook'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('facebook'); ?>" class="social-btn" id="facebook">facebook</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('vk'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('vk'); ?>" class="social-btn" id="vk">vk</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('youtube'); if (!empty($p)) : ?>
-								<a href="<?php echo $params->get('youtube'); ?>" class="social-btn" id="youtube">youtube</a>
-							<?php endif; ?>
-
-							<?php $p = $params->get('skype'); if (!empty($p)) : ?>
-								<a href="skype:<?php echo $params->get('skype'); ?>" class="social-btn" id="skype"><?php echo $params->get('skype'); ?></a>
-							<?php endif; ?>
-						</div>
-					</div>
-				<?php endif; ?>
-				
 			</div>
-		</div>
+		</section>
+		<?php endif; ?>
+
+		<?php if($blankj3_helper->show_user2): ?>
+		<section id="user2" class="<?php echo $blankj3_helper->class_user2; ?>">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="user2-modules-wrapper">
+							<jdoc:include type="modules" name="user2" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php endif; ?>
+
+		<?php if($blankj3_helper->show_user3): ?>
+		<section id="user3" class="<?php echo $blankj3_helper->class_user3; ?>">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="user3-modules-wrapper">
+							<jdoc:include type="modules" name="user3" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php endif; ?>
+		
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<section id="messages">
+							<jdoc:include type="message" />
+						</section>
+					</div>
+
+					<?php if($blankj3_helper->show_left): ?>
+					<div class="<?php echo $blankj3_helper->class_left; ?>">
+						<section id="left">
+								<jdoc:include type="modules" name="left" />
+						</section>
+					</div>
+					<?php endif; ?>
+					
+					<div class="<?php echo $blankj3_helper->getContentClass(); ?>">
+						<div class="row">
+							<?php if($blankj3_helper->show_content_header): ?>
+							<div class="col-md-12">
+								<section id="content-header">
+										<jdoc:include type="modules" name="content-header" />
+								</section>
+							</div>
+							<?php endif; ?>
+							
+							<div class="col-md-12">
+								<article id="content">
+									<jdoc:include type="component" />
+								</article>
+							</div>
+
+							<?php if($blankj3_helper->show_content_footer): ?>
+							<div class="col-md-12">
+								<section id="content-footer">
+										<jdoc:include type="modules" name="content-footer" />
+								</section>
+							</div>
+							<?php endif; ?>
+						</div>
+					</div>
+
+					<?php if($blankj3_helper->show_right): ?>
+					<div class="<?php echo $blankj3_helper->class_right; ?>">
+						<section id="right">
+								<jdoc:include type="modules" name="right" />
+						</section>
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</main>
+		
+		<?php if($blankj3_helper->show_bottom_left || $blankj3_helper->show_bottom_center || $blankj3_helper->show_bottom_right): ?>
+		<section id="bottom-blocks">
+			<div class="row">
+				<?php if($blankj3_helper->show_bottom_left): ?>
+					<div class="<?php echo $blankj3_helper->class_bottom_left; ?>">
+						<div id="bottom-left">
+							<jdoc:include type="modules" name="bottom-left" />
+						</div>
+					</div>
+				<?php endif; ?>
+
+				<?php if($blankj3_helper->show_bottom_center): ?>
+					<div class="<?php echo $blankj3_helper->class_bottom_center; ?>">	
+						<div id="bottom-center" class="<?php echo $blankj3_helper->class_bottom_center; ?>">
+							<jdoc:include type="modules" name="bottom-center" />
+						</div>
+					</div>
+				<?php endif; ?>
+
+				<?php if($blankj3_helper->show_bottom_right): ?>
+					<div class="<?php echo $blankj3_helper->class_bottom_right; ?>">	
+						<div id="bottom-right" class="<?php echo $blankj3_helper->class_bottom_right; ?>">
+							<jdoc:include type="modules" name="bottom-right" />
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
+		</section>
+		<?php endif; ?>
+
+		<?php if($blankj3_helper->show_bottom): ?>
+		<section id="bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="bottom-modules-wrapper">
+							<jdoc:include type="modules" name="bottom" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php endif; ?>
+
+		<?php if($blankj3_helper->show_footer): ?>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="footer-modules-wrapper">
+							<jdoc:include type="modules" name="footer" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<?php endif; ?>
+		<?php if($params->get('disable_scripts')): ?>
+			<jdoc:include type="footj3" />
+		<?php endif; ?>
 	</body>
 </html>

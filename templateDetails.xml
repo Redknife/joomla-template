@@ -1,131 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="1.6" type="template">
-        <name>blank_j3</name>
-        <creationDate>2012-10-03</creationDate>
-        <author>Saity74</author>
-        <authorEmail>info@saity74.ru</authorEmail>
-        <authorUrl>http://saity74.ru</authorUrl>
-        <copyright>Saity74 LLC.</copyright>
-        <license>GNU/GPL 2 or Later</license>
-        <version>1.0.0</version>
-        <description>TMPL_JOOMLA3_DESC</description>
-        <files>
-                <filename>error.php</filename>
-                <filename>index.html</filename>
-                <filename>index.php</filename>
-                <filename>raw.php</filename>
-                <filename>send.php</filename>
-                <filename>templateDetails.xml</filename>
-                <folder>img</folder>
-                <folder>css</folder>
-                <folder>html</folder>
-                <folder>js</folder>
-        </files>
-        <positions>
-		<position>top</position>
-		<position>top-left</position>
-		<position>top-center</position>
-		<position>top-right</position>
-		<position>menu-top</position>
-		<position>slider</position>
-		<position>menu-bottom</position>
-		<position>breadcrumbs</position>
-		<position>content-header</position>
-		<position>left</position>
-		<position>right</position>
-		<position>content-footer</position>
-		<position>bottom1</position>
-		<position>bottom2</position>
-		<position>bottom3</position>
-		<position>footer</position>
-        </positions>
-        <languages folder="language">
-			<language tag="ru-RU">ru-RU/ru-RU.tpl_blank_j3.ini</language>
-			<language tag="ru-RU">ru-RU/ru-RU.tpl_blank_j3.sys.ini</language>
-			<language tag="en-GB">en-GB/en-GB.tpl_blank_j3.ini</language>
-			<language tag="en-GB">en-GB/en-GB.tpl_blank_j3.sys.ini</language>
-		</languages>
+<extension version="2.5" type="template">
+    <name>blank_j3</name>
+    <creationDate>2012-10-03</creationDate>
+    <author>Saity74</author>
+    <authorEmail>info@saity74.ru</authorEmail>
+    <authorUrl>http://saity74.ru</authorUrl>
+    <copyright>Saity74 LLC.</copyright>
+    <license>GNU/GPL 2 or Later</license>
+    <version>1.0.0</version>
+    <description>TMPL_JOOMLA3_DESC</description>
+    <files>
+        <filename>error.php</filename>
+        <filename>index.html</filename>
+        <filename>index.php</filename>
+        <filename>raw.php</filename>
+        <filename>send.php</filename>
+        <filename>templateDetails.xml</filename>
+        <folder>img</folder>
+        <folder>css</folder>
+        <folder>fonts</folder>
+        <folder>html</folder>
+        <folder>js</folder>
+        <folder>layouts</folder>
+        <folder>_php</folder>
+    </files>
+    <positions>
+        <position>top</position>
+        <position>top-left</position>
+        <position>top-center</position>
+        <position>top-right</position>
+        <position>user1</position>
+        <position>user2</position>
+        <position>user3</position>
+        <position>content-header</position>
+        <position>left</position>
+        <position>right</position>
+        <position>content-footer</position>
+        <position>bottom-left</position>
+        <position>bottom-center</position>
+        <position>bottom-right</position>
+        <position>bottom</position>
+        <position>footer</position>
+    </positions>
+    <languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.tpl_blank_j3.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.tpl_blank_j3.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_blank_j3.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_blank_j3.sys.ini</language>
+	</languages>
 	<config>
 		<fields name="params">
-			<fieldset name="advanced">
-				<field name="socialButtons"
+			<fieldset name="grid">
+				<field name="full_width_head"
 					type="radio"
-					class="btn-group"
-					default="1"
-					label="TPL_BLANK_J3_SOCIAL_LABEL"
-					description="TPL_BLANK_J3_SOCIAL_LABEL"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				
-				<field name="twitter" class="" type="text"
-					label="TPL_BLANK_J3_SOCIAL_TWITTER_LABEL"
-					description="TPL_BLANK_J3_SOCIAL_TWITTER_DESC" />
-				
-				<field name="skype" class="" type="text"
-					label="TPL_BLANK_J3_SOCIAL_SKYPE_LABEL"
-					description="TPL_BLANK_J3_SOCIAL_SKYPE_DESC" />
-				
-				<field name="vk" class="" type="text"
-					label="TPL_BLANK_J3_SOCIAL_VK_LABEL"
-					description="TPL_BLANK_J3_SOCIAL_VK_DESC" />
-				
-				<field name="facebook" class="" type="text"
-					label="TPL_BLANK_J3_SOCIAL_FACEBOOK_LABEL"
-					description="TPL_BLANK_J3_SOCIAL_FACEBOOK_DESC" />
-				
-				<field name="youtube" class="" type="text"
-					label="TPL_BLANK_J3_SOCIAL_YOUTUBE_LABEL"
-					description="TPL_BLANK_J3_SOCIAL_YOUTUBE_DESC" />
-
-				<field name="logoFile" class="" type="media" default=""
-					label="TPL_BLANK_J3_LOGO_LABEL"
-					description="TPL_BLANK_J3_LOGO_DESC" />
-					
-				<field name="googleFont"
-					type="radio"
-					class="btn-group"
-					default="1"
-					label="TPL_BLANK_J3_FONT_LABEL"
-					description="TPL_BLANK_J3_FONT_DESC"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_FULL_WIDTH_HEAD_LABEL"
+					description="TPL_BLANK_J3_FULL_WIDTH_HEAD_DESC" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
 				</field>
 
+				<field name="full_width_menu"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_FULL_WIDTH_MENU_LABEL"
+					description="TPL_BLANK_J3_FULL_WIDTH_MENU_DESC" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="full_width_footer"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_FULL_WIDTH_FOOTER_LABEL"
+					description="TPL_BLANK_J3_FULL_WIDTH_FOOTER_DESC" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="top_left_class" type="text" class="span4" default="col-xs-12 col-sm-4 col-md-4 col-lg-4"
+					label="TPL_BLANK_J3_TOP_LEFT_CLASS_LABEL"
+					description="TPL_BLANK_J3_TOP_LEFT_CLASS_DESC" />
+
+				<field name="top_center_class" type="text" class="span4" default="col-xs-12 col-sm-4 col-md-4 col-lg-4"
+					label="TPL_BLANK_J3_TOP_CENTER_CLASS_LABEL"
+					description="TPL_BLANK_J3_TOP_CENTER_CLASS_DESC" />
+
+				<field name="top_right_class" type="text" class="span4" default="col-xs-12 col-sm-4 col-md-4 col-lg-4"
+					label="TPL_BLANK_J3_TOP_RIGHT_CLASS_LABEL"
+					description="TPL_BLANK_J3_TOP_RIGHT_CLASS_DESC" />
+
+				<field name="user1_class" type="text" class="span4" default=""
+					label="TPL_BLANK_J3_USER1_CLASS_LABEL"
+					description="TPL_BLANK_J3_USER1_CLASS_DESC" />
+
+				<field name="user2_class" type="text" class="span4" default=""
+					label="TPL_BLANK_J3_USER2_CLASS_LABEL"
+					description="TPL_BLANK_J3_USER2_CLASS_DESC" />
+
+				<field name="user3_class" type="text" class="span4" default=""
+					label="TPL_BLANK_J3_USER3_CLASS_LABEL"
+					description="TPL_BLANK_J3_USER3_CLASS_DESC" />
+
+				<field name="left_class" type="text" class="span4" default="col-xs-12 col-sm-3 col-md-3 col-lg-3"
+					label="TPL_BLANK_J3_LEFT_CLASS_LABEL"
+					description="TPL_BLANK_J3_LEFT_CLASS_DESC" />
+
+				<field name="right_class" type="text" class="span4" default="col-xs-12"
+					label="TPL_BLANK_J3_RIGHT_CLASS_LABEL"
+					description="TPL_BLANK_J3_RIGHT_CLASS_DESC" />
+
+				<field name="bottom_left_class" type="text" class="span4" default="col-xs-12 col-sm-4 col-md-4 col-lg-4"
+					label="TPL_BLANK_J3_BOTTOM_LEFT_CLASS_LABEL"
+					description="TPL_BLANK_J3_BOTTOM_LEFT_CLASS_DESC" />
+
+				<field name="bottom_center_class" type="text" class="span4" default="col-xs-12 col-sm-4 col-md-4 col-lg-4"
+					label="TPL_BLANK_J3_BOTTOM_CENTER_CLASS_LABEL"
+					description="TPL_BLANK_J3_BOTTOM_CENTER_CLASS_DESC" />
+
+				<field name="bottom_right_class" type="text" class="span4" default="col-xs-12 col-sm-4 col-md-4 col-lg-4"
+					label="TPL_BLANK_J3_BOTTOM_RIGHT_CLASS_LABEL"
+					description="TPL_BLANK_J3_BOTTOM_RIGHT_CLASS_DESC" />
+			</fieldset>
+
+			<fieldset name="style">
 				<field name="googleFontName" class="" type="text" default="Open+Sans"
 					label="TPL_BLANK_J3_FONT_NAME_LABEL"
 					description="TPL_BLANK_J3_FONT_NAME_DESC" />
-				
-				<field name="wrap-edges"
-					type="radio"
-					class="btn-group"
-					default="1"
-					label="TPL_BLANK_J3_EDGES_LABEL"
-					description="TPL_BLANK_J3_EDGES_DESC"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				
-				<field name="top-left-size"
-					class=""
-					type="text"
-					label="TPL_BLANK_J3_TOPLEFT_SIZE_LABEL"
-					description="TPL_BLANK_J3_TOPLEFT_SIZE_DESC" />
-				<field name="top-center-size"
-					class=""
-					type="text"
-					label="TPL_BLANK_J3_TOPCENTER_SIZE_LABEL"
-					description="TPL_BLANK_J3_TOPCENTER_SIZE_DESC" />
-				<field name="top-right-size"
-					class=""
-					type="text"
-					label="TPL_BLANK_J3_TOPRIGHT_SIZE_LABEL"
-					description="TPL_BLANK_J3_TOPRIGHT_SIZE_DESC" />
 
+				<field name="body_background_color" class="" type="color" default="#ffffff"
+					label="TPL_BLANK_J3_BODY_BACKGROUND_COLOR_LABEL"
+					description="TPL_BLANK_J3_BODY_BACKGROUND_COLOR_DESC" />
+
+				<field name="body_background_image" class="" type="media" default=""
+					label="TPL_BLANK_J3_BODY_BACKGROUND_IMAGE_LABEL"
+					description="TPL_BLANK_J3_BODY_BACKGROUND_IMAGE_DESC" />
+
+				<field name="body_font_color" class="" type="color" default="#222222"
+					label="TPL_BLANK_J3_BODY_FONT_COLOR_LABEL"
+					description="TPL_BLANK_J3_BODY_FONT_COLOR_DESC" />
+
+				<field name="head_background_color" class="" type="color" default="#222222"
+					label="TPL_BLANK_J3_HEAD_BACKGROUND_COLOR_LABEL"
+					description="TPL_BLANK_J3_HEAD_BACKGROUND_COLOR_DESC" />
+
+				<field name="head_font_color" class="" type="color" default="#fff"
+					label="TPL_BLANK_J3_HEAD_FONT_COLOR_LABEL"
+					description="TPL_BLANK_J3_HEAD_FONT_COLOR_DESC" />
+
+				<field name="mainmenu_background_color" class="" type="color" default="#e67e22"
+					label="TPL_BLANK_J3_MAINMENU_BACKGROUND_COLOR_LABEL"
+					description="TPL_BLANK_J3_MAINMENU_BACKGROUND_COLOR_DESC" />
+
+				<field name="mainmenu_font_color" class="" type="color" default="#222222"
+					label="TPL_BLANK_J3_MAINMENU_FONT_COLOR_LABEL"
+					description="TPL_BLANK_J3_MAINMENU_FONT_COLOR_DESC" />
+
+				<field name="mainmenu_active_background_color" class="" type="color" default="#ffffff"
+					label="TPL_BLANK_J3_MAINMENU_ACTIVE_BACKGROUND_COLOR_LABEL"
+					description="TPL_BLANK_J3_MAINMENU_ACTIVE_BACKGROUND_COLOR_DESC" />
+
+				<field name="mainmenu_active_font_color" class="" type="color" default="#e67e22"
+					label="TPL_BLANK_J3_MAINMENU_ACTIVE_FONT_COLOR_LABEL"
+					description="TPL_BLANK_J3_MAINMENU_ACTIVE_FONT_COLOR_DESC" />
+
+				<field name="footer_background_color" class="" type="color" default="#ffffff"
+					label="TPL_BLANK_J3_FOOTER_BACKGROUND_COLOR_LABEL"
+					description="TPL_BLANK_J3_FOOTER_BACKGROUND_COLOR_DESC" />
+
+				<field name="footer_font_color" class="" type="color" default="#222222"
+					label="TPL_BLANK_J3_FOOTER_FONT_COLOR_LABEL"
+					description="TPL_BLANK_J3_FOOTER_FONT_COLOR_DESC" />
+
+				<field name="link_color" class="" type="color" default="#e67e22"
+					label="TPL_BLANK_J3_LINK_COLOR_LABEL"
+					description="TPL_BLANK_J3_LINK_COLOR_DESC" />
+
+				<field name="link_hover_color" class="" type="color" default="#ffa348"
+					label="TPL_BLANK_J3_LINK_HOVER_COLOR_LABEL"
+					description="TPL_BLANK_J3_LINK_HOVER_COLOR_DESC" />
+			</fieldset>
+
+			<fieldset name="typo">
+				<field name="body_font_size" class="" type="text" default="14px"
+					label="TPL_BLANK_J3_BODY_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_BODY_FONT_SIZE_DESC" />
+
+				<field name="menu_font_size" class="" type="text" default="16px"
+					label="TPL_BLANK_J3_MENU_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_MENU_FONT_SIZE_DESC" />
+
+				<field name="h1_font_size" class="" type="text" default="1.8em"
+					label="TPL_BLANK_J3_H1_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_H1_FONT_SIZE_DESC" />
+
+				<field name="h2_font_size" class="" type="text" default="1.6em"
+					label="TPL_BLANK_J3_H1_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_H1_FONT_SIZE_DESC" />
+
+				<field name="h3_font_size" class="" type="text" default="1.4em"
+					label="TPL_BLANK_J3_H3_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_H3_FONT_SIZE_DESC" />
+
+				<field name="h4_font_size" class="" type="text" default="1.3em"
+					label="TPL_BLANK_J3_H4_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_H4_FONT_SIZE_DESC" />
+
+				<field name="h5_font_size" class="" type="text" default="1.2em"
+					label="TPL_BLANK_J3_H5_FONT_SIZE_LABEL"
+					description="TPL_BLANK_J3_H5_FONT_SIZE_DESC" />
+			</fieldset>
+
+			<fieldset name="optimise">
+				<field name="disable_scripts"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_DISABLE_SCRIPTS_LABEL"
+					description="TPL_BLANK_J3_DISABLE_SCRIPTS_DESC" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="compile_css"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_COMPILE_CSS_LABEL"
+					description="TPL_BLANK_J3_COMPILE_CSS_DESC" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="disabled_scripts_list"
+					type="textarea"
+					class="span4"
+					rows="5"
+					label="TPL_BLANK_J3_DISABLED_SCRIPTS_LIST_LABEL"
+					description="TPL_BLANK_J3_DISABLED_SCRIPTS_LIST_DESC"
+				/>
 			</fieldset>
 		</fields>
+
 	</config>
 </extension>
