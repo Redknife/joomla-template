@@ -46,4 +46,17 @@
 
         echo $html;
     }
+    
+    function modChrome_default($module, &$params, &$attribs)
+    {
+        if ($module->content){
+            echo "<div class=\"module ". htmlspecialchars($params->get('moduleclass_sfx')) ."\">";
+        
+        if ($module->showtitle)
+            echo "<h3 class=\"module-header\">".$module->title."</h3>";
+        // echo "<a href=\"index.php/articles\">Посмотреть все</a>";
+        echo $module->content;
+        echo "</div>";
+    }
+}
 ?>
