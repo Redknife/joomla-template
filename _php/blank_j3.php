@@ -22,7 +22,14 @@ class blank_j3{
         $this->_params      = $template->params;
         
         $menu = JFactory::getApplication()->getMenu();
-        $this->isFront = $menu->getActive() == $menu->getDefault();
+        $activeMenu = $menu->getActive();
+        $defaultMenu = $menu->getDefault();
+        //detect frontpage
+        $this->isFront =  $activeMenu->id == $defaultMenu->id;
+        //merge menu params with template params
+        jimport( 'joomla.utilities.arrayhelper' );
+        $params = array_merge($activeMenu->params->toArray(), $this->_params->toArray());
+        $this->params = JArrayHelper::toObject($params, 'JRegistry');
         
         // check for position
         $this->show_top = $template->countModules('top');
