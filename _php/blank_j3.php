@@ -21,6 +21,9 @@ class blank_j3{
         $this->_template    = $template;
         $this->_params      = $template->params;
         
+        $menu = JFactory::getApplication()->getMenu();
+        $this->isFront = $menu->getActive() == $menu->getDefault();
+        
         // check for position
         $this->show_top = $template->countModules('top');
         $this->show_top_left = $template->countModules('top-left');
