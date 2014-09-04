@@ -2,14 +2,45 @@ jQuery(function() {
 	(function($){
         //you jQ code here
 
-        //carousel init
-        //   if($('.carousel')){
-        	// $('.carousel').tinycarousel({
-        //           animationTime : 500
-        //       });
-        //   }
+        // form validation init..
+        // var myLanguage = {
+        //   errorTitle : 'Form submission failed!',
+        //   requiredFields : 'Заполните поле',
+        //   badTime : 'You have not given a correct time',
+        //   badEmail : 'Введите корректный E-mail',
+        //   badTelephone : 'You have not given a correct phone number',
+        //   badSecurityAnswer : 'You have not given a correct answer to the security question',
+        //   badDate : 'You have not given a correct date',
+        //   lengthBadStart : 'You must give an answer between ',
+        //   lengthBadEnd : ' символов',
+        //   lengthTooLongStart : 'You have given an answer longer than ',
+        //   lengthTooShortStart : 'Введите больше ',
+        //   notConfirmed : 'Values could not be confirmed',
+        //   badDomain : 'Incorrect domain value',
+        //   badUrl : 'The answer you gave was not a correct URL',
+        //   badCustomVal : 'Неправильно заполнено поле',
+        //   badInt : 'Введите номер',
+        //   badSecurityNumber : 'Your social security number was incorrect',
+        //   badUKVatAnswer : 'Incorrect UK VAT Number',
+        //   badStrength : 'The password isn\'t strong enough',
+        //   badNumberOfSelectedOptionsStart : 'You have to choose at least ',
+        //   badNumberOfSelectedOptionsEnd : ' answers',
+        //   badAlphaNumeric : 'The answer you gave must contain only alphanumeric characters ',
+        //   badAlphaNumericExtra: ' and ',
+        //   wrongFileSize : 'The file you are trying to upload is too large',
+        //   wrongFileType : 'The file you are trying to upload is of wrong type',
+        //   groupCheckedRangeStart : 'Please choose between ',
+        //   groupCheckedTooFewStart : 'Please choose at least ',
+        //   groupCheckedTooManyStart : 'Please choose a maximum of ',
+        //   groupCheckedEnd : ' item(s)'
+        // };
 
-        //gallery init
+        // $.validate({
+        //         language : myLanguage,
+        //         scrollToTopOnError : false
+        // });
+
+        //gallery init..
         // if($("[id^='zoom-gallery']")){
         //     $.each($("[id^='zoom-gallery']"), function(){
         //         $(this).magnificPopup({
@@ -39,7 +70,7 @@ jQuery(function() {
         //     });
         // }
 
-        // form uploader
+        // form uploader..
         // if($('#file')){
         //     $('#file').change(function(){
         //         $('#file').each(function() {
@@ -62,7 +93,7 @@ jQuery(function() {
         // }
         // ..form uploader
 
-        //map..
+        //google map..
         // if ($('#map-wrapper').length){
         //     var map;
         //     function initialize() {
@@ -96,20 +127,20 @@ jQuery(function() {
 
         //     google.maps.event.addDomListener(window, 'load', initialize);
         // }
-        //..map
 
-        //form submit
+        //form submit..
         // $jbtn = $('.btn-jsend-submit');
         // if($jbtn){
-        //     $jbtn.on('click', function(e){
-        //         e.preventDefault();
-        //         $jform = $(this).parent();
-        //         url = ($jform.attr('action') == '/index.php') ? $jform.attr('action') + '/?tmpl=send' : $jform.attr('action');
-        //         $jform.attr('action', url);
-        //         if(($jform).validate()){
-        //             $jform.submit();
-        //         } 
-        //     });
+                $jbtn.on('click', function(e){
+                        e.preventDefault();
+                        $jform = $(this).parents('.mail-form');
+                        url = $jform.attr('action');
+                        if( $jform.attr('action').indexOf('?tmpl=send') === -1 ){
+                             url =  $jform.attr('action') + '?tmpl=send';
+                        }
+                        $jform.attr('action', url);
+                        $jform.submit();
+                });
         // }
 	})(jQuery);
 });

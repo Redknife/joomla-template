@@ -47,6 +47,7 @@ class blank_j3{
         $this->show_bottom_center = $template->countModules('bottom-center');
         $this->show_bottom_right = $template->countModules('bottom-right');
         $this->show_bottom = $template->countModules('bottom');
+        $this->show_bottom_socials = $template->countModules('bottom-socials');
         $this->show_footer = $template->countModules('footer');
 
         // size blocks

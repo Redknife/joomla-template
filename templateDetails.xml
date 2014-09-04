@@ -23,6 +23,7 @@
         <folder>js</folder>
         <folder>layouts</folder>
         <folder>_php</folder>
+        <folder>language</folder>
     </files>
     <positions>
         <position>top</position>
@@ -40,6 +41,7 @@
         <position>bottom-center</position>
         <position>bottom-right</position>
         <position>bottom</position>
+        <position>bottom-social</position>
         <position>footer</position>
     </positions>
     <languages folder="language">

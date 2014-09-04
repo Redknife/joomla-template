@@ -9,10 +9,16 @@ $doc->addStyleSheet('templates/blank_j3/css/typo.css');
 $doc->addStyleSheet('templates/blank_j3/css/modules.css');
 $doc->addStyleSheet('templates/blank_j3/css/template.css');
 $doc->addScript('templates/blank_j3/js/application.js');
-
+// $doc->addScript('templates/blank_j3/js/jquery.magnific-popup.min.js');
+$doc->addScript("//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js");
 $blankj3_helper = new blank_j3($this);
 
 $params = $this->params;
+
+$menu = JFactory::getApplication()->getMenu();
+$active_menu = $menu->getActive();
+$default_menu = $menu->getDefault();
+$frontpage = ($active_menu->id == $default_menu->id);
 ?>
 <!DOCTYPE html>
 <html dir="<?php echo $this->direction; ?>" lang="<?php echo $this->language; ?>" >
@@ -37,7 +43,7 @@ $params = $this->params;
 		<![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
-	<body>
+	<body <?php if($frontpage) echo 'class="frontpage"'; ?>>
 		<?php if($blankj3_helper->show_top || $blankj3_helper->show_top_left || $blankj3_helper->show_center || $blankj3_helper->show_right): ?>
 		<header>
 			<?php if($blankj3_helper->show_top): ?>
@@ -186,31 +192,41 @@ $params = $this->params;
 		
 		<?php if($blankj3_helper->show_bottom_left || $blankj3_helper->show_bottom_center || $blankj3_helper->show_bottom_right): ?>
 		<section id="bottom-blocks">
-			<div class="row">
-				<?php if($blankj3_helper->show_bottom_left): ?>
-					<div class="<?php echo $blankj3_helper->class_bottom_left; ?>">
-						<div id="bottom-left">
-							<jdoc:include type="modules" name="bottom-left" />
+			<?php if($blankj3_helper->show_bottom_left): ?>
+				<div id="bottom-left">
+					<div class="container">
+						<div class="row">
+							<div class="<?php echo $blankj3_helper->class_bottom_left; ?>">
+								<jdoc:include type="modules" name="bottom-left" />
+							</div>
 						</div>
 					</div>
-				<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
-				<?php if($blankj3_helper->show_bottom_center): ?>
-					<div class="<?php echo $blankj3_helper->class_bottom_center; ?>">	
-						<div id="bottom-center" class="<?php echo $blankj3_helper->class_bottom_center; ?>">
-							<jdoc:include type="modules" name="bottom-center" />
+			<?php if($blankj3_helper->show_bottom_center): ?>
+				<div id="bottom-center">
+					<div class="container">
+						<div class="row">
+							<div class="<?php echo $blankj3_helper->class_bottom_center; ?>">
+								<jdoc:include type="modules" name="bottom-center" />
+							</div>
 						</div>
 					</div>
-				<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
-				<?php if($blankj3_helper->show_bottom_right): ?>
-					<div class="<?php echo $blankj3_helper->class_bottom_right; ?>">	
-						<div id="bottom-right" class="<?php echo $blankj3_helper->class_bottom_right; ?>">
-							<jdoc:include type="modules" name="bottom-right" />
+			<?php if($blankj3_helper->show_bottom_right): ?>
+				<div id="bottom-right">
+					<div class="container">
+						<div class="row">
+							<div class="<?php echo $blankj3_helper->class_bottom_right; ?>">
+								<jdoc:include type="modules" name="bottom-right" />
+							</div>
 						</div>
-					</div>
-				<?php endif; ?>
-			</div>
+					</div>	
+				</div>
+			<?php endif; ?>
 		</section>
 		<?php endif; ?>
 
@@ -221,6 +237,20 @@ $params = $this->params;
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div class="bottom-modules-wrapper">
 							<jdoc:include type="modules" name="bottom" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php endif; ?>
+
+		<?php if($blankj3_helper->show_bottom_socials): ?>
+		<section id="bottom-socials">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="bottom-socials-modules-wrapper">
+							<jdoc:include type="modules" name="bottom-socials" />
 						</div>
 					</div>
 				</div>
