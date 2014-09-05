@@ -8,9 +8,10 @@ $doc->addStyleSheet('templates/blank_j3/css/bootstrap.min.css');
 $doc->addStyleSheet('templates/blank_j3/css/typo.css');
 $doc->addStyleSheet('templates/blank_j3/css/modules.css');
 $doc->addStyleSheet('templates/blank_j3/css/template.css');
-$doc->addScript('templates/blank_j3/js/application.js');
+$doc->addStyleSheet('templates/blank_j3/js/bootstrap.min.js');
 // $doc->addScript('templates/blank_j3/js/jquery.magnific-popup.min.js');
 $doc->addScript("//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js");
+$doc->addScript('templates/blank_j3/js/application.js');
 $blankj3_helper = new blank_j3($this);
 
 $params = $this->params;
