@@ -71,26 +71,27 @@ jQuery(function() {
         // }
 
         // form uploader..
-        // if($('#file')){
-        //     $('#file').change(function(){
-        //         $('#file').each(function() {
-        //             var name = this.value;
-        //                 reWin = /.*\\(.*)/;
-        //             var fileTitle = name.replace(reWin, "$1");
-        //             reUnix = /.*\/(.*)/;
-        //             fileTitle = fileTitle.replace(reUnix, "$1");
-        //             $('#filename > .flname').text(fileTitle);
-        //             $('#filename').show();
-        //         });
-        //     });
+        // $('.input-file').change(function() {
+        //     // $('.input-file').each(function() {
+        //         var name = this.value;
+        //         reWin = /.*\\(.*)/;
+        //         var fileTitle = name.replace(reWin, "$1");
+        //         reUnix = /.*\/(.*)/;
+        //         fileTitle = fileTitle.replace(reUnix, "$1");
+        //         textContainer = $(this).parents('.form-uploadfile').find('.flname');
+        //         textContainer.text(fileTitle);
+        //         textContainer.parent().show();
+        //     // });
+        // });
 
-        //     $('#remove-file').click(function(event){
-        //             // event.preventDefault();
-        //             var control = $('.upload-control');
-        //             control.replaceWith( control = control.clone( true ) );
-        //             $('#filename').hide();
-        //     });
-        // }
+        // $('.remove-file-btn').on('click', function(event) {
+        //     // event.preventDefault();
+        //     var $formWrapper = $(this).parents('.form-uploadfile');
+        //     var $control = $formWrapper.find('.upload-control');
+        //     var $fileName = $formWrapper.find('.filename-wrapper');
+        //     $control.replaceWith($control = $control.clone(true));
+        //     $fileName.hide();
+        // });
         // ..form uploader
 
         //google map..
