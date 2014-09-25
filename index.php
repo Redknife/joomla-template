@@ -8,7 +8,7 @@ $doc->addStyleSheet('templates/blank_j3/css/bootstrap.min.css');
 $doc->addStyleSheet('templates/blank_j3/css/typo.css');
 $doc->addStyleSheet('templates/blank_j3/css/modules.css');
 $doc->addStyleSheet('templates/blank_j3/css/template.css');
-$doc->addStyleSheet('templates/blank_j3/js/bootstrap.min.js');
+$doc->addScript('templates/blank_j3/js/bootstrap.min.js');
 // $doc->addScript('templates/blank_j3/js/jquery.magnific-popup.min.js');
 $doc->addScript("//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js");
 $doc->addScript("//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js");
