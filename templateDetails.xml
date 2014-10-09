@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="template">
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="3.1" type="template" client="site">
     <name>blank_j3</name>
     <creationDate>2012-10-03</creationDate>
     <author>Saity74</author>
@@ -266,7 +267,7 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="TPL_BLANK_J3_YAM_VEBVISOR_LABEL"
+					label="TPL_BLANK_J3_YAM_VEBVISOR_LABEL" >
 					   <option value="1">JYES</option>
 					   <option value="0">JNO</option>
 				</field>
@@ -275,7 +276,7 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="TPL_BLANK_J3_YAM_CLICKMAP_LABEL"
+					label="TPL_BLANK_J3_YAM_CLICKMAP_LABEL" >
 					   <option value="1">JYES</option>
 					   <option value="0">JNO</option>
 				</field>
@@ -284,7 +285,7 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="TPL_BLANK_J3_YAM_TRACKLINKS_LABEL"
+					label="TPL_BLANK_J3_YAM_TRACKLINKS_LABEL" >
 					   <option value="1">JYES</option>
 					   <option value="0">JNO</option>
 				</field>
@@ -293,7 +294,7 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="TPL_BLANK_J3_YAM_ACCURATETRACK_LABEL"
+					label="TPL_BLANK_J3_YAM_ACCURATETRACK_LABEL" >
 					   <option value="1">JYES</option>
 					   <option value="0">JNO</option>
 				</field>
@@ -302,7 +303,7 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="0"
-					label="TPL_BLANK_J3_YAM_NOINDEX_LABEL"
+					label="TPL_BLANK_J3_YAM_NOINDEX_LABEL" >
 					   <option value="1">JYES</option>
 					   <option value="0">JNO</option>
 				</field>
