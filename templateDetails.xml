@@ -129,9 +129,14 @@
 			</fieldset>
 
 			<fieldset name="style">
-				<field name="googleFontName" class="" type="text" default="Open+Sans"
-					label="TPL_BLANK_J3_FONT_NAME_LABEL"
-					description="TPL_BLANK_J3_FONT_NAME_DESC" />
+				<field name="enable_tmpl_styles"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_ENABLE_TMPL_STYLES_LABEL" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
 
 				<field name="body_background_color" class="" type="color" default="#ffffff"
 					label="TPL_BLANK_J3_BODY_BACKGROUND_COLOR_LABEL"
@@ -187,6 +192,10 @@
 			</fieldset>
 
 			<fieldset name="typo">
+				<field name="googleFontName" class="" type="text"
+					label="TPL_BLANK_J3_FONT_NAME_LABEL"
+					description="TPL_BLANK_J3_FONT_NAME_DESC" />
+
 				<field name="body_font_size" class="" type="text" default="14px"
 					label="TPL_BLANK_J3_BODY_FONT_SIZE_LABEL"
 					description="TPL_BLANK_J3_BODY_FONT_SIZE_DESC" />
@@ -244,6 +253,68 @@
 					label="TPL_BLANK_J3_DISABLED_SCRIPTS_LIST_LABEL"
 					description="TPL_BLANK_J3_DISABLED_SCRIPTS_LIST_DESC"
 				/>
+			</fieldset>
+
+			<fieldset name="counters">
+				
+				<field type="spacer" name="yandexspacer" hr="true" label="Yandex.Metrika" />
+				
+				<field name="yandex_metrika_id" class="" type="text"
+					label="TPL_BLANK_J3_YAM_ID_LABEL" />
+
+				<field name="yandex_metrika_webvisor"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_BLANK_J3_YAM_VEBVISOR_LABEL"
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="yandex_metrika_clickmap"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_BLANK_J3_YAM_CLICKMAP_LABEL"
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="yandex_metrika_tracklinks"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_BLANK_J3_YAM_TRACKLINKS_LABEL"
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="yandex_metrika_accuratetrack"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_BLANK_J3_YAM_ACCURATETRACK_LABEL"
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field name="yandex_metrika_noindex"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_YAM_NOINDEX_LABEL"
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
+				<field type="spacer" name="myspacer1" hr="true" label="Google Analytics" />
+				
+				<field name="googleanalytics_code"
+					type="textarea"
+					class="span6"
+					rows="6"
+					label="TPL_BLANK_J3_GOOGLE_ANALYTICS_CODE_LABEL" />
+
 			</fieldset>
 		</fields>
 

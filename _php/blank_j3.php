@@ -127,7 +127,30 @@ class blank_j3{
         return $content_class;
     }
     
-   
+    public function getYandexMetrika(){
+        $id = $this->_params->get('yandex_metrika_id');
+
+        if(isset($id)){
+            $param_webvisor = $this->_params->get('yandex_metrika_webvisor');
+            $param_clickmap = $this->_params->get('yandex_metrika_clickmap');
+            $param_tracklinks = $this->_params->get('yandex_metrika_tracklinks');
+            $param_accuratetrack = $this->_params->get('yandex_metrika_accuratetrack');
+            $param_noindex = $this->_params->get('yandex_metrika_noindex');
+
+            $webvisor = $param_webvisor ? 'true' : 'false';
+            $clickMap = $param_clickmap ? 'true' : 'false';
+            $tracklinks = $param_tracklinks ? 'true' : 'false';
+            $accurateTrackBounce = $param_accuratetrack ? 'true' : 'false';
+            $noIndex = $param_noindex ? 'ut:"noindex",' : '';
+
+            $javascript = '<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter' . $id . ' = new Ya.Metrika({id:' . $id . ', clickmap:' . $clickMap . ', trackLinks:' . $tracklinks . ', accurateTrackBounce:' . $accurateTrackBounce  . ','. $noIndex . ' webvisor:' . $webvisor . '}); } catch(e) {} }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/' . $id . '" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->';
+        }
+        else return '';
+    }
+
+    public function getGoogleAnalytics(){
+        return $this->_params->get('googleanalytics_code');
+    }
 }
 
 ?>

@@ -200,7 +200,9 @@ class JDocumentRendererHeadJ3 extends JDocumentRenderer
 		
 		$rel_path = 'templates/'.$document->template.'/css/global.css';
 		
-		$document->addStyleSheet($rel_path);
+		if($params->get('enable_tmpl_styles', 0)){
+			$document->addStyleSheet($rel_path);
+		}
 		
 		if ($document->params->get('compile_css', 0))
 		{

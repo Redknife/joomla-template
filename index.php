@@ -14,7 +14,6 @@ $doc->addScript("//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js");
 $doc->addScript("//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js");
 $doc->addScript('templates/blank_j3/js/application.js');
 
-
 $blankj3_helper = new blank_j3($this);
 
 $params = $this->params;
@@ -27,12 +26,18 @@ $frontpage = ($active_menu->id == $default_menu->id);
 <!DOCTYPE html>
 <html dir="<?php echo $this->direction; ?>" lang="<?php echo $this->language; ?>" >
 	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+
 		<!-- Use of Google Font -->
 		<?php if ($params->get('googleFontName', '')): ?>
 			<link href='//fonts.googleapis.com/css?family=<?php echo $params->get('googleFontName'); ?>' rel='stylesheet' type='text/css' />
 		<?php endif; ?>
 
-			<jdoc:include type="headj3" />
+		<jdoc:include type="headj3" />
+
 		<!--[if IE]>
 			<script type="text/javascript" src="templates/blank_j3/js/PIE.js"></script>
 		<![endif]-->
@@ -44,8 +49,8 @@ $frontpage = ($active_menu->id == $default_menu->id);
 		<![endif]-->
 		<!--[if lt IE 9]>
 			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
 	<body <?php if($frontpage) echo 'class="frontpage"'; ?>>
 		<?php if($blankj3_helper->show_top || $blankj3_helper->show_top_left || $blankj3_helper->show_center || $blankj3_helper->show_right): ?>
@@ -278,5 +283,9 @@ $frontpage = ($active_menu->id == $default_menu->id);
 		<?php if($params->get('disable_scripts')): ?>
 			<jdoc:include type="footj3" />
 		<?php endif; ?>
+	
+		<!-- Counters -->
+		<?php echo $blankj3_helper->getYandexMetrika(); ?>
+		<?php echo $blankj3_helper->getGoogleAnalytics(); ?>
 	</body>
 </html>
