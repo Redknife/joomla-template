@@ -258,7 +258,7 @@
 
 			<fieldset name="counters">
 				
-				<field type="spacer" name="yandexspacer" hr="true" label="Yandex.Metrika" />
+				<field type="spacer" name="yandexspacer" label="----- Yandex.Metrika -----" />
 				
 				<field name="yandex_metrika_id" class="" type="text"
 					label="TPL_BLANK_J3_YAM_ID_LABEL" />
@@ -308,12 +308,13 @@
 					   <option value="0">JNO</option>
 				</field>
 
-				<field type="spacer" name="myspacer1" hr="true" label="Google Analytics" />
+				<field type="spacer" name="myspacer1" label="----- Google Analytics -----" />
 				
 				<field name="googleanalytics_code"
 					type="textarea"
 					class="span6"
 					rows="6"
+					filter="raw"
 					label="TPL_BLANK_J3_GOOGLE_ANALYTICS_CODE_LABEL" />
 
 			</fieldset>
