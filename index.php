@@ -8,8 +8,8 @@ $doc->addStyleSheet('templates/blank_j3/css/bootstrap.min.css');
 $doc->addStyleSheet('templates/blank_j3/css/typo.css');
 $doc->addStyleSheet('templates/blank_j3/css/modules.css');
 $doc->addStyleSheet('templates/blank_j3/css/template.css');
-$doc->addScript('templates/blank_j3/js/bootstrap.min.js');
-// $doc->addScript('templates/blank_j3/js/jquery.magnific-popup.min.js');
+$doc->addScript('templates/blank_j3/js/vendor/bootstrap.min.js');
+// $doc->addScript('templates/blank_j3/js/lib/jquery.magnific-popup.min.js');
 $doc->addScript("//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js");
 $doc->addScript("//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js");
 $doc->addScript('templates/blank_j3/js/application.js');
@@ -39,7 +39,7 @@ $frontpage = ($active_menu->id == $default_menu->id);
 		<jdoc:include type="headj3" />
 
 		<!--[if IE]>
-			<script type="text/javascript" src="templates/blank_j3/js/PIE.js"></script>
+			<script type="text/javascript" src="templates/blank_j3/js/lib/PIE.js"></script>
 		<![endif]-->
 		<!--[if lt IE 7]>
 			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
