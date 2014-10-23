@@ -33,7 +33,9 @@ $frontpage = ($active_menu->id == $default_menu->id);
 		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+		<?php if ($params->get('enable_full_bootstrap', 0)): ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<?php endif; ?>
 
 		<!-- Use of Google Font -->
 		<?php if ($params->get('googleFontName', '')): ?>
