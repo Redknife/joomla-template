@@ -1,10 +1,16 @@
 <?php defined('_JEXEC') or die;
 require_once(JPATH_THEMES.'/blank_j3/_php/blank_j3.php');
 JHtmlBootstrap::loadCss(false);
+$params = $this->params;
 
 $doc = JFactory::getDocument();
 $doc->addStyleSheet('templates/blank_j3/css/reset.min.css');
-$doc->addStyleSheet('templates/blank_j3/css/bootstrap.min.css');
+if ($params->get('enable_full_bootstrap', 0)){
+	$doc->addStyleSheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+}
+else{
+	$doc->addStyleSheet('templates/blank_j3/css/bootstrap.min.css');
+}
 $doc->addStyleSheet('templates/blank_j3/css/typo.css');
 $doc->addStyleSheet('templates/blank_j3/css/modules.css');
 $doc->addStyleSheet('templates/blank_j3/css/template.css');
@@ -15,8 +21,6 @@ $doc->addScript("//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/j
 $doc->addScript('templates/blank_j3/js/application.js');
 
 $blankj3_helper = new blank_j3($this);
-
-$params = $this->params;
 
 $menu = JFactory::getApplication()->getMenu();
 $active_menu = $menu->getActive();

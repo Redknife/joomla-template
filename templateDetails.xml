@@ -130,6 +130,16 @@
 			</fieldset>
 
 			<fieldset name="style">
+				
+				<field name="enable_full_bootstrap"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_BLANK_J3_ENABLE_FULL_BOOTSTRAP_LABEL" >
+					   <option value="1">JYES</option>
+					   <option value="0">JNO</option>
+				</field>
+
 				<field name="enable_tmpl_styles"
 					type="radio"
 					class="btn-group btn-group-yesno"
