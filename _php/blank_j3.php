@@ -29,7 +29,7 @@ class blank_j3{
         //merge menu params with template params
         jimport( 'joomla.utilities.arrayhelper' );
         $params = array_merge($activeMenu->params->toArray(), $this->_params->toArray());
-        $this->params = JArrayHelper::toObject($params, 'JRegistry');
+        $this->params = new JRegistry($params);
         
         // check for position
         $this->show_top = $template->countModules('top');
